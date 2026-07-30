@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Paw 1: upper-left, rotated -15deg -->
+  <g transform="translate(42,46) rotate(-15)" fill="white">
+    <ellipse cx="0" cy="14" rx="12.5" ry="10.5"/>
+    <ellipse cx="-15" cy="2" rx="5.5" ry="5"/>
+    <ellipse cx="-5.5" cy="-4" rx="5.5" ry="5"/>
+    <ellipse cx="5.5" cy="-4" rx="5.5" ry="5"/>
+    <ellipse cx="15" cy="2" rx="5.5" ry="5"/>
+  </g>
+  <!-- Paw 2: lower-right, rotated 22deg -->
+  <g transform="translate(117,115) rotate(22)" fill="white">
+    <ellipse cx="0" cy="14" rx="12.5" ry="10.5"/>
+    <ellipse cx="-15" cy="2" rx="5.5" ry="5"/>
+    <ellipse cx="-5.5" cy="-4" rx="5.5" ry="5"/>
+    <ellipse cx="5.5" cy="-4" rx="5.5" ry="5"/>
+    <ellipse cx="15" cy="2" rx="5.5" ry="5"/>
+  </g>
+</svg>

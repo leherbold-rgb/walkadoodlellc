@@ -1,0 +1,526 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ── PLACEHOLDER UPDATE GUIDE ──────────────────────────────────────────────────
+// Search this file for the strings below and swap in real values:
+//
+//   https://personalwalkies.com/profile/walkadoodle-llc      → your Walkies booking/profile URL
+//   https://personalwalkies.com/profile/walkadoodle-llc        → your Walkies client login URL
+//   PET_INTAKE_FORM_URL      → Google Drive / Walkies link to intake form
+//   LIABILITY_WAIVER_URL     → Google Drive / Walkies link to waiver
+//   POLICIES_URL             → Google Drive / Walkies link to policies
+//   PET_CARE_INSTRUCTIONS_URL → link to pet care instructions form
+//   https://www.facebook.com/people/Walkadoodle-LLC/61590626547918/             → https://facebook.com/YourPage
+//   https://www.instagram.com/walkadoodlellc            → https://instagram.com/YourHandle
+//   CONTACT_PHONE            → +1XXXXXXXXXX (tel: link) and display format
+//   CONTACT_EMAIL            → your@email.com
+//   CONTACT_AREA             → City, State or neighborhood
+//   CONTACT_HOURS            → e.g. Mon–Sat, 7am–7pm
+//   PRICE_SINGLE             → e.g. $20
+//   PRICE_EXTENDED           → e.g. $35
+//   PRICE_PACKAGE            → e.g. $90
+//   PRICE_PUPPY              → e.g. $15
+//   PRICE_DROPIN             → e.g. $15
+// ─────────────────────────────────────────────────────────────────────────────
+---
+
+<Layout>
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Walkadoodle home">
+        <img
+          src="/walkadoodle-logo.jpg"
+          alt=""
+          width="44"
+          height="44"
+          aria-hidden="true"
+        />
+        <span class="nav-logo-name">Walkadoodle, LLC</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="#services">Services and Rates</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions" id="nav-actions">
+        <a href="https://petsitter.personalwalkies.com/journal" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+          Client Login
+        </a>
+        <a href="https://personalwalkies.com/profile/walkadoodle-llc" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+          Book an Appointment
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero" aria-label="Walkadoodle professional dog walking">
+
+      <!-- TODO: swap for <video class="hero-bg" muted autoplay loop playsinline> when you have real footage -->
+      <img
+        class="hero-bg"
+        src="/dogs/dog-hero.jpg"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        fetchpriority="high"
+      />
+
+      <!-- Left-to-right gradient overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Paw-print trail: 5 paws draw themselves diagonally across the hero on load -->
+      <svg class="hero-paw-trail" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <g class="paw paw-1" transform="translate(150,620) rotate(-25)">
+          <ellipse class="paw-pad" cx="0" cy="0" rx="22" ry="18" fill="none" stroke="white" stroke-width="2"/>
+          <ellipse cx="-25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="-8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+        </g>
+        <g class="paw paw-2" transform="translate(310,500) rotate(-18)">
+          <ellipse class="paw-pad" cx="0" cy="0" rx="22" ry="18" fill="none" stroke="white" stroke-width="2"/>
+          <ellipse cx="-25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="-8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+        </g>
+        <g class="paw paw-3" transform="translate(480,385) rotate(-10)">
+          <ellipse class="paw-pad" cx="0" cy="0" rx="22" ry="18" fill="none" stroke="white" stroke-width="2"/>
+          <ellipse cx="-25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="-8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+        </g>
+        <g class="paw paw-4" transform="translate(660,270) rotate(-3)">
+          <ellipse class="paw-pad" cx="0" cy="0" rx="22" ry="18" fill="none" stroke="white" stroke-width="2"/>
+          <ellipse cx="-25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="-8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+        </g>
+        <g class="paw paw-5" transform="translate(850,165) rotate(5)">
+          <ellipse class="paw-pad" cx="0" cy="0" rx="22" ry="18" fill="none" stroke="white" stroke-width="2"/>
+          <ellipse cx="-25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="-8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="8" cy="-26" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="25" cy="-18" rx="8.5" ry="7.5" fill="white"/>
+        </g>
+      </svg>
+
+      <!-- Text + CTAs -->
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          Licensed &amp; Insured
+        </p>
+        <h1>The Best Care for Your Best&nbsp;Friends</h1>
+        <p class="hero-sub">
+          Professional walks by a vetted, background-checked walker who loves your pup as much as you do.
+          Photo updates after every walk. Easy scheduling and everything handled.
+        </p>
+        <div class="hero-actions">
+          <a href="https://personalwalkies.com/profile/walkadoodle-llc" class="btn btn-white" target="_blank" rel="noopener">
+            Book an Appointment
+          </a>
+          <a href="https://petsitter.personalwalkies.com/journal" class="btn btn-white-ghost" target="_blank" rel="noopener">
+            Client Login →
+          </a>
+        </div>
+        <p class="hero-existing-clients">
+          Already a client?
+          <a href="https://petsitter.personalwalkies.com/journal" target="_blank" rel="noopener">Log in to Walkies →</a>
+        </p>
+      </div>
+
+      <div class="hero-cards" aria-hidden="true">
+        <div class="hero-card hero-card--a">
+          <div class="hero-card-face">
+            <img src="/dogs/dog-stick.jpg" alt="" loading="eager" />
+          </div>
+        </div>
+        <div class="hero-card hero-card--b">
+          <div class="hero-card-face">
+            <img src="/dogs/dogs-play.jpg" alt="" loading="eager" />
+          </div>
+        </div>
+        <div class="hero-card hero-card--c">
+          <div class="hero-card-face">
+            <img src="/dogs/dog-grass.jpg" alt="" loading="eager" />
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── TRUST STRIP ──────────────────────────────────── -->
+    <div class="trust-strip" role="list" aria-label="Why pet owners trust Walkadoodle">
+      <ul class="trust-list">
+        <li role="listitem">
+          <span class="trust-check" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="white"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          Licensed &amp; Insured
+        </li>
+        <li role="listitem">
+          <span class="trust-check" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="white"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          Photo Updates After Every Walk
+        </li>
+        <li role="listitem">
+          <span class="trust-check" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="white"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          Vetted &amp; Background-Checked Walker
+        </li>
+        <li role="listitem">
+          <span class="trust-check" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="white"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          Managed Through the Walkies App
+        </li>
+      </ul>
+    </div>
+
+    <!-- ── SERVICES & RATES ─────────────────────────────── -->
+    <section id="services" class="section section-services">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Services and Rates</h2>
+          <p>Simple, transparent pricing. No hidden fees. Holiday surcharges noted in advance.</p>
+        </div>
+
+        <div class="rates-list" role="list">
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Dog Walks and Drop-Ins <span class="rate-duration">(1 visit per day)</span></h3>
+              <p>A single walk or drop-in visit with a photo update after every appointment</p>
+            </div>
+            <div class="rate-price">$30 <span>/ visit</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Dog Walks and Drop-Ins <span class="rate-duration">(up to 3 visits per day)</span></h3>
+              <p>Multiple check-ins in a single day — ideal for puppies, seniors, or dogs who need extra attention</p>
+            </div>
+            <div class="rate-price">$65 <span>/ day</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Cat Drop-Ins</h3>
+              <p>Feeding, litter, fresh water, and a little affection while you're away</p>
+            </div>
+            <div class="rate-price">$25 <span>/ visit</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Overnight Stays and House Sitting</h3>
+              <p>Lisa stays at your home overnight: feeding, walks, playtime, and peace of mind while you travel</p>
+            </div>
+            <div class="rate-price">$75 <span>/ night</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Boarding</h3>
+              <p>Your dog stays with Lisa. A meet and greet and trial day/night are required first — both billed separately</p>
+            </div>
+            <div class="rate-price">$85 <span>/ stay</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Trial Day/Night for Possible Boarding</h3>
+              <p>Required before boarding to make sure it's the right fit for your dog and for Lisa</p>
+            </div>
+            <div class="rate-price">$65 <span>/ stay</span></div>
+          </div>
+          <div class="rate-item" role="listitem">
+            <div class="rate-info">
+              <h3>Meet and Greet for Possible Boarding</h3>
+              <p>A quick in-person introduction before committing to boarding</p>
+            </div>
+            <div class="rate-price">$10 <span>/ session</span></div>
+          </div>
+        </div>
+
+        <p class="rates-note">
+          Full fee schedule, seasonal rates, and add-ons available in the
+          <a href="https://personalwalkies.com/profile/walkadoodle-llc" target="_blank" rel="noopener">Walkies app</a>.
+          Holiday surcharges apply on select dates.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ─────────────────────────────────── -->
+    <section id="how-it-works" class="section section-how">
+      <div class="section-inner">
+        <div class="section-header" style="text-align:center; margin-inline:auto; max-width:600px;">
+          <h2>How It Works</h2>
+          <p>From sign-up to a happy dog in three easy steps, all managed through the free Walkies app.</p>
+        </div>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="step-number" aria-label="Step 1">1</div>
+            <h3>Set up your Walkies profile</h3>
+            <p>Download the free Walkies app and create your account. Tell us about your dog: breed, size, temperament, and any special needs.</p>
+          </div>
+
+          <div class="step-connector" aria-hidden="true"></div>
+
+          <div class="step" role="listitem">
+            <div class="step-number" aria-label="Step 2">2</div>
+            <h3>Meet Lisa, your walker</h3>
+            <p>Every Walkadoodle client works with Lisa directly. One person, one relationship. You'll know exactly who's coming to your door before the first walk.</p>
+          </div>
+
+          <div class="step-connector" aria-hidden="true"></div>
+
+          <div class="step" role="listitem">
+            <div class="step-number" aria-label="Step 3">3</div>
+            <h3>Enjoy your day</h3>
+            <p>Get photos and a walk report after every walk. Invoicing and payment, all in one place.</p>
+          </div>
+        </div>
+
+        <div class="app-badges">
+          <p>Download the free Walkies app to get started:</p>
+          <div class="badge-links">
+            <a
+              href="https://apps.apple.com/us/app/walkies-pet-sitting-walking/id1336482131"
+              class="app-badge"
+              aria-label="Download Walkies on the App Store"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.swiftlabs.walkies"
+              class="app-badge"
+              aria-label="Get Walkies on Google Play"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.18.64.24.99.18L14.66 12 3.82.06C3.23.18 2.82.72 2.82 1.44v21.12c0 .5.13.93.36 1.2zm10.1-10.38L5.54 21.1l8.34-4.74-2.6-2.98zM21.2 10.16l-2.5-1.42L15.78 12l2.93 3.26 2.49-1.42c.71-.4 1.13-1.06 1.13-1.84s-.42-1.44-1.13-1.84zM5.54 2.9l7.74 7.72 2.6-2.97L5.54 2.9z"/></svg>
+              Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── WALKER PROFILES ──────────────────────────────── -->
+    <section id="team" class="section section-team">
+      <div class="section-inner">
+        <div class="section-header" style="text-align:center; margin-inline:auto; max-width:600px;">
+          <h2>Meet Your Walker</h2>
+          <p>You'll always know exactly who's walking your dog. Not a rotating roster of strangers, but one dedicated person who genuinely loves animals.</p>
+        </div>
+
+        <div class="walkers-row">
+          <article class="walker walker--solo">
+            <div class="walker-photo walker-photo--placeholder" aria-label="Lisa Rose photo placeholder">
+              <span>LR</span>
+            </div>
+            <h3>Lisa Rose</h3>
+            <!-- TODO: replace the placeholder above with a real headshot -->
+            <p>Founder of Walkadoodle and your dog's dedicated walker. Lisa volunteers at a local animal rescue and has hands-on experience with medication administration: oral, topical, and injectable. She also provides soft pet stairs for dogs that need help getting into the car. Licensed, insured, and driven by a genuine love of animals. References available upon request.</p>
+            <ul class="walker-tags" aria-label="Credentials">
+              <li>Licensed &amp; Insured</li>
+              <li>Rescue Volunteer</li>
+              <li>Medication Administration</li>
+              <!-- TODO: uncomment once confirmed with Southborough Veterinary Hospital -->
+              <!-- <li>Southborough Vet Recommended</li> -->
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS: add real reviews here when ready -->
+
+    <!-- ── CONTACT ───────────────────────────────────────── -->
+    <section id="contact" class="section section-contact">
+      <div class="section-inner">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>We'd love to meet you and your dog. Reach out and we'll get back to you within one business day.</p>
+
+            <ul class="contact-details">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <a href="tel:+17742452164">(774) 245-2164</a>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:walkadoodlellc@gmail.com">walkadoodlellc@gmail.com</a>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Southborough, Marlborough, Northborough, Westborough &amp; Framingham, MA
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                Flexible scheduling, contact us for availability
+              </li>
+            </ul>
+
+            <div class="social-links">
+              <a href="https://www.facebook.com/people/Walkadoodle-LLC/61590626547918/" class="social-link" target="_blank" rel="noopener" aria-label="Walkadoodle on Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+              <a href="https://www.instagram.com/walkadoodlellc" class="social-link" target="_blank" rel="noopener" aria-label="Walkadoodle on Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Your name</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                placeholder="Jane Smith"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email address</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                autocomplete="email"
+                placeholder="jane@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone <span style="font-weight:400;color:var(--c-muted)">(optional)</span></label>
+              <input
+                type="tel"
+                id="contact-phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="(555) 000-0000"
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-dog">Tell us about your dog</label>
+              <textarea
+                id="contact-dog"
+                name="dog"
+                rows="4"
+                placeholder="Breed, age, energy level, any special needs..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA BAND ──────────────────────────────────────── -->
+    <section class="cta-band" aria-label="Book a walk with Walkadoodle">
+      <div class="section-inner cta-inner">
+        <h2>Ready to give your pup the best part of their day?</h2>
+        <p>Book your first walk in minutes through the free Walkies app.</p>
+        <div class="cta-actions">
+          <a href="https://personalwalkies.com/profile/walkadoodle-llc" class="btn btn-white" target="_blank" rel="noopener">
+            Book an Appointment
+          </a>
+          <a href="https://petsitter.personalwalkies.com/journal" class="btn btn-white-ghost" target="_blank" rel="noopener">
+            Client Login →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/walkadoodle-logo.jpg" alt="Walkadoodle LLC" width="40" height="40" />
+        <span class="footer-name">Walkadoodle LLC</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#services">Services and Rates</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-right">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Walkadoodle-LLC/61590626547918/" aria-label="Walkadoodle on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/walkadoodlellc" aria-label="Walkadoodle on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+        <p class="footer-legal">&copy; 2026 Walkadoodle LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement | null;
+  const navLinks = document.querySelector('.nav-links') as HTMLElement | null;
+  const navActions = document.querySelector('#nav-actions') as HTMLElement | null;
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    toggle.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+    navLinks?.classList.toggle('is-open');
+    navActions?.classList.toggle('is-open');
+  });
+
+  // Close nav when a link is clicked
+  navLinks?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('is-open');
+      navActions?.classList.remove('is-open');
+    });
+  });
+</script>
