@@ -1173,6 +1173,16 @@ ul { list-style: none; }
   gap: var(--sp-4);
 }
 
+.form-status {
+  margin: 0;
+  font-weight: 700;
+  color: var(--c-purple);
+}
+
+.form-status.is-error {
+  color: oklch(0.5 0.19 25);
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
