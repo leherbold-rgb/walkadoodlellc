@@ -391,13 +391,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <form class="contact-form" action="https://formsubmit.co/walkadoodlellc@gmail.com" method="post" novalidate>
-            <!-- Delivered to Lisa's inbox by FormSubmit. The hidden fields set the
-                 email's subject and layout; _honey is a trap only bots fill in. -->
-            <input type="hidden" name="_subject" value="New message from the Walkadoodle website" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+            <!-- Delivered to Lisa's inbox (walkadoodlellc@gmail.com) by Web3Forms.
+                 The access key is meant to be public: it can only send to her
+                 inbox, not read anything. botcheck is a trap only bots fill in. -->
+            <input type="hidden" name="access_key" value="62c0b306-fbd2-4719-974c-13d4bdf8c1c2" />
+            <input type="hidden" name="subject" value="New message from the Walkadoodle website" />
+            <input type="hidden" name="from_name" value="Walkadoodle website" />
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div class="form-group">
               <label for="contact-name">Your name</label>
               <input
@@ -511,7 +512,7 @@ import Layout from '../layouts/Layout.astro';
 
   // Contact form: sends in the background so the visitor stays on the page
   // and sees whether it went through. Without JavaScript the form still
-  // posts to FormSubmit directly.
+  // posts to Web3Forms directly.
   const form = document.querySelector('.contact-form') as HTMLFormElement | null;
   const status = form?.querySelector('.form-status') as HTMLElement | null;
   const submit = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
@@ -537,13 +538,13 @@ import Layout from '../layouts/Layout.astro';
       submit.textContent = 'Sending...';
     }
     try {
-      const res = await fetch('https://formsubmit.co/ajax/walkadoodlellc@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: data,
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok || body.success === 'false' || body.success === false) throw new Error();
+      if (!res.ok || body.success !== true) throw new Error();
       form.reset();
       showStatus("Thanks! Your message is on its way to Lisa. She'll be in touch soon.", false);
     } catch {
