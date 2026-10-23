@@ -133,7 +133,7 @@ ul { list-style: none; }
   max-width: var(--max-w);
   margin-inline: auto;
   padding-inline: clamp(var(--sp-6), 5vw, var(--sp-12));
-  height: 68px;
+  height: 120px;
   display: flex;
   align-items: center;
   gap: var(--sp-6);
@@ -146,11 +146,18 @@ ul { list-style: none; }
   text-decoration: none;
   flex-shrink: 0;
 }
+/* Large enough that the mark (and its lettering) reads clearly. */
 .nav-logo img {
-  width: 44px;
-  height: 44px;
+  width: 104px;
+  height: 104px;
   border-radius: var(--r-full);
-  object-fit: cover;
+  object-fit: contain;
+}
+@media (max-width: 760px) {
+  .nav-logo img {
+    width: 72px;
+    height: 72px;
+  }
 }
 .nav-logo-name {
   font-family: var(--font-display);
